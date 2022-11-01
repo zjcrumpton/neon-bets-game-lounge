@@ -1,6 +1,5 @@
 export enum Value {
-    ACE = 1,
-    TWO,
+    TWO = 2,
     THREE,
     FOUR,
     FIVE,
@@ -12,6 +11,7 @@ export enum Value {
     JACK,
     QUEEN,
     KING,
+    ACE,
 }
 
 type ValueIndexedStringMap = {[key in Value]: string};
