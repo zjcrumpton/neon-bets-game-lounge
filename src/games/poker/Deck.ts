@@ -18,7 +18,8 @@ export class Deck {
     // Fisher-Yates Shuffle implemenetation from this article https://wsvincent.com/javascript-object-oriented-deck-cards/
     public shuffle() {
         const shuffledDeck = [...this.cards];
-        let m = shuffledDeck.length, i;
+        let m = shuffledDeck.length;
+        let i = 0;
 
         while (m) {
             i = Math.floor(Math.random() * m--);
