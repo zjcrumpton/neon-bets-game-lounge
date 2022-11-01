@@ -2,6 +2,7 @@ import { Deck } from "./Deck";
 
 export class Game {
     constructor() {
-        new Deck();
+        const deck = new Deck();
+        deck.shuffle();
     }
 }
