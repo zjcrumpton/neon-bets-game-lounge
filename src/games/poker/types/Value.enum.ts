@@ -14,14 +14,16 @@ export enum Value {
     KING,
 }
 
-export const ValueStringMap = {
+type ValueIndexedStringMap = {[key in Value]: string};
+
+export const ValueStringMap: ValueIndexedStringMap = {
     [Value.ACE]: 'Ace',
     [Value.TWO]: 'Two',
     [Value.THREE]: 'Three',
     [Value.FOUR]: 'Four',
     [Value.FIVE]: 'Five',
     [Value.SIX]: 'Six',
-    [Value.QUEEN]: 'Seven',
+    [Value.SEVEN]: 'Seven',
     [Value.EIGHT]: 'Eight',
     [Value.NINE]: 'Nine',
     [Value.TEN]: 'Ten',

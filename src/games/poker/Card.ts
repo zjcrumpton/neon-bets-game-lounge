@@ -1,5 +1,5 @@
 import { Suit } from "./types/Suit.enum";
-import { Value } from "./types/Value.enum";
+import { Value, ValueStringMap } from "./types/Value.enum";
 
 export class Card {
 
@@ -11,6 +11,10 @@ export class Card {
         this._value = value;
     }
 
+    get displayName() {
+        return `${ValueStringMap[this._value]} of ${this._suit}`;
+    }
+
     get suit() {
         return this._suit;
     }
@@ -18,5 +22,4 @@ export class Card {
     get value() {
         return this._value;
     }
-
 }
