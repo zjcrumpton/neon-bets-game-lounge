@@ -1,0 +1,11 @@
+.default-button {
+  cursor: pointer;
+  height: 50px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+}
