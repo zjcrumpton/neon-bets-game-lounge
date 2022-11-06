@@ -14,7 +14,7 @@ const LandingPage = () => {
 
   return (
     <div className="landing-page">
-        <div className='nb-landing-page-card-group'>
+        {/* <div className='nb-landing-page-card-group'>
           <Card className="nb-landing-page-card" value={CardValue.ACE} suit={CardSuit.HEARTS} />
           <Card className="nb-landing-page-card" value={CardValue.TWO} suit={CardSuit.SPADES} />
           <Card className="nb-landing-page-card" showBackOverride value={CardValue.THREE} suit={CardSuit.DIAMONDS} />
@@ -25,7 +25,7 @@ const LandingPage = () => {
           <Card className="nb-landing-page-card" value={CardValue.EIGHT} suit={CardSuit.CLUBS} />
           <Card className="nb-landing-page-card" value={CardValue.NINE} suit={CardSuit.HEARTS} />
           <Card className="nb-landing-page-card" value={CardValue.TEN} suit={CardSuit.SPADES} />
-        </div>
+        </div> */}
 
 
         <div className="nb-landing-page-main">
