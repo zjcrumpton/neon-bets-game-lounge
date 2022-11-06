@@ -1,0 +1,10 @@
+.join-room-modal {
+  background-color: #37C0FB;
+  height: 200px;
+  width: 300px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}

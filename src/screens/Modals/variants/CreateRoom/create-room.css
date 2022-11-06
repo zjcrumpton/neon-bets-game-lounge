@@ -1,0 +1,55 @@
+.create-room-modal {
+  background-color: #FB37AE;
+  height: 240px;
+  width: 300px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.create-room-modal-title {
+  color: rgba(10, 10, 10, 0.627);
+  align-self: flex-start;
+  font-size: 24px;
+  font-weight: bolder;
+  font-style: oblique;
+  position: relative;
+  left: 24px;
+}
+
+.input-box {
+  border: none;
+  background-color: white;
+  color: black;
+  width: 80%;
+  height: 32px;
+  font-size: 14px;
+  border-radius: 6px;
+  text-indent: 6px;
+  font-style: oblique;
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -10px;
+  gap: 10px;
+}
+
+.create-room-modal-button {
+  position: relative;
+  border-radius: 5px;
+  border: none;
+  height: 30px;
+  padding: 5px 20px;
+  margin-top: -10px;
+  background-color: #47ebb2;
+  color: rgba(10, 10, 10, 0.627);
+  font-weight: bold;
+  cursor: pointer;
+}
