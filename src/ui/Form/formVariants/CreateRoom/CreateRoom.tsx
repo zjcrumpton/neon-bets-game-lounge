@@ -5,6 +5,12 @@ import { GameEvent } from '../../../../types';
 import {  } from 'react-router-dom';
 import './create-room.css';
 import { ROOM } from '../../../../constants/endpoints';
+import { Game } from '../../../../types/Game';
+
+interface SelectGameData {
+  roomCode: string,
+  game: Game,
+}
 
 const createNewRoom = (username: string, roomName: string, customRoomCode?: string) => {
   if (username) {
@@ -15,8 +21,12 @@ const createNewRoom = (username: string, roomName: string, customRoomCode?: stri
     });
 
     const joinNewRoom = (newRoomCode: string) => {
-      window.location.href = ROOM + `/${newRoomCode}`;
+      socket.emit(GameEvent.SELECT_GAME, {
+        roomCode: newRoomCode,
+        game: Game.POKER,
+      });
       socket.removeListener(GameEvent.ROOM_CREATED, joinNewRoom);
+      window.location.href = ROOM + `/${newRoomCode}`;
     }
 
     socket.on(GameEvent.ROOM_CREATED, joinNewRoom);
