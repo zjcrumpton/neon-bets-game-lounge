@@ -6,4 +6,5 @@ export enum GameEvent {
     ROOM_CREATED = 'ROOM_CREATED',
     START_GAME = 'START_GAME',
     SELECT_GAME = 'SELECT_GAME',
+    GAME_SELECTED = 'GAME_SELECTED',
 }
