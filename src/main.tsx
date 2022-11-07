@@ -1,13 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Navigate,
-} from 'react-router-dom';
-import './index.css'
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import LandingPage from './screens/LandingPage/LandingPage';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import './index.css'
 
 const router = createBrowserRouter([
   {
@@ -18,10 +14,14 @@ const router = createBrowserRouter([
     path: "/home",
     element: <LandingPage />,
   },
-])
+]);
+
+const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>
-)
+);

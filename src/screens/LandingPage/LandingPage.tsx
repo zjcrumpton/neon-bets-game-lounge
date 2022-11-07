@@ -1,54 +1,59 @@
-import React, { useCallback, useState } from 'react'
 import Button from '../../ui/Button/Button';
 import neonBets from './res/NeonBets.svg';
+import { socket } from '../../services';
+import { useCallback, useMemo, useState } from 'react';
+import { CreateRoom, JoinRoom } from '../Modals/variants';
 import './landing-page.css';
-import Modal from '../Modals/Modal';
-import { ModalType } from '../Modals/modal.types';
-import Card from '../../ui/Card/Card';
-import { CardSuit, CardValue } from '../../ui/Card/card.types';
+import { useRoomListQuery } from '../../services/serverBrowser';
+import { GameEvent } from '../../types';
 
+socket.on('connection', () => {
+  console.log('connected');
+});
 
+enum ModalType {
+  CREATE_ROOM,
+  JOIN_ROOM,
+}
+
+const RoomModalMap = {
+  [ModalType.JOIN_ROOM]: JoinRoom,
+  [ModalType.CREATE_ROOM]: CreateRoom,
+};
+
+const FOOTER_COPY = 'a game by Void Studios, 2022';
+const JOIN_ROOM_BUTTON_COPY = 'JOIN ROOM';
+const CREATE_ROOM_BUTTON_COPY = 'CREATE ROOM';
 
 const LandingPage = () => {
-  const [modalState, setModalState] = useState<ModalType>(ModalType.DEFAULT);
+  const [modalSelection, setModalSelection] = useState<ModalType>();
+
+  const selectJoin = useCallback(() => {
+    setModalSelection(ModalType.JOIN_ROOM);
+  }, []);
+
+  const selectCreate = useCallback(() => {
+    socket.emit(GameEvent.NEW_ROOM, {
+      playerName: 'Chad',
+    });
+    // setModalSelection(ModalType.CREATE_ROOM);
+  }, []);
+
+  const Modal = useMemo(() => modalSelection ? RoomModalMap[modalSelection] : () => null, [modalSelection]);
 
   return (
     <div className="landing-page">
-        {/* <div className='nb-landing-page-card-group'>
-          <Card className="nb-landing-page-card" value={CardValue.ACE} suit={CardSuit.HEARTS} />
-          <Card className="nb-landing-page-card" value={CardValue.TWO} suit={CardSuit.SPADES} />
-          <Card className="nb-landing-page-card" showBackOverride value={CardValue.THREE} suit={CardSuit.DIAMONDS} />
-          <Card className="nb-landing-page-card" value={CardValue.FOUR} suit={CardSuit.CLUBS} />
-          <Card className="nb-landing-page-card" value={CardValue.FIVE} suit={CardSuit.HEARTS} />
-          <Card className="nb-landing-page-card" value={CardValue.SIX} suit={CardSuit.SPADES} />
-          <Card className="nb-landing-page-card" value={CardValue.SEVEN} suit={CardSuit.DIAMONDS} />
-          <Card className="nb-landing-page-card" value={CardValue.EIGHT} suit={CardSuit.CLUBS} />
-          <Card className="nb-landing-page-card" value={CardValue.NINE} suit={CardSuit.HEARTS} />
-          <Card className="nb-landing-page-card" value={CardValue.TEN} suit={CardSuit.SPADES} />
-        </div> */}
-
-
-        <div className="nb-landing-page-main">
-          <object className="logo" data={neonBets} />
-          { modalState === ModalType.DEFAULT && (
-            <div className="button-container"> 
-              <Button 
-                className="join-room-button"
-                text="JOIN ROOM"
-                onClick={() => setModalState(ModalType.JOIN_ROOM)} 
-              />
-              <Button 
-                className="create-room-button" 
-                text="CREATE ROOM" 
-                onClick={() => setModalState(ModalType.CREATE_ROOM)} 
-              />
-            </div>
-          )}
+      <object className="logo" data={neonBets} />
+      {!modalSelection && (
+        <div className="button-container">
+          <Button className="join-room-button" text={JOIN_ROOM_BUTTON_COPY} onClick={selectJoin} />
+          <Button className="create-room-button" text={CREATE_ROOM_BUTTON_COPY} onClick={selectCreate} />
         </div>
-      <Modal type={modalState} onExit={() => setModalState(ModalType.DEFAULT)} />
-      <div className="landing-page-signature">an application by Void Studios, 2022</div>
+      )}
+      <Modal />
+      <div className="landing-page-signature">{FOOTER_COPY}</div>
     </div>
   )
 }
 
-export default LandingPage
+export default LandingPage;

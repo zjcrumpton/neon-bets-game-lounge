@@ -1,4 +1,5 @@
 import { FC, useCallback, useState } from "react";
+import { useRoomListQuery } from "../../../../services/serverBrowser";
 import "./join-room.css";
 
 const joinExistingRoom = (username: string, roomCode: string) => {
@@ -12,6 +13,9 @@ const joinExistingRoom = (username: string, roomCode: string) => {
 const JoinRoom: FC = () => {
   const [username, setUsername] = useState<string>('');
   const [roomCode, setRoomCode] = useState<string>('');
+
+  const query = useRoomListQuery();
+  console.log('q here', query);
 
   const joinRoom = useCallback(() => {
     joinExistingRoom(username, roomCode);
@@ -41,4 +45,4 @@ const JoinRoom: FC = () => {
   )
 }
 
-export default JoinRoom
+export default JoinRoom;
