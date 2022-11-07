@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import '../form-common.css';
 import './create-room.css';
 
 const createNewRoom = (username: string, roomName: string, customRoomCode?: string) => {
@@ -27,9 +28,9 @@ const CreateRoom = ({
 
   return (
     <div className="nb-create-room">
-      <div>
-        <div className="nb-create-room-title">CREATE ROOM</div>
-        <div className="nb-create-room-exit">X</div>
+      <div className="nb-form-header">
+        <div className="nb-form-title">CREATE ROOM</div>
+        <div className="nb-form-exit" onClick={onExit}>X</div>
       </div>
       <div className="nb-form-input-group">
         <input 

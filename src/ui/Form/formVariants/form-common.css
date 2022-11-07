@@ -1,0 +1,52 @@
+.nb-form-title {
+  color: rgba(10, 10, 10, 0.627);
+}
+
+.nb-form-exit {
+  color: white;
+  cursor: pointer;
+}
+
+.nb-form-input-box {
+  border: none;
+  background-color: white;
+  color: black;
+  width: 80%;
+  height: 32px;
+  font-size: 14px;
+  border-radius: 6px;
+  text-indent: 6px;
+  font-style: oblique;
+}
+
+.nb-form-input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -10px;
+  gap: 10px;
+}
+
+.nb-form-success-button {
+  position: relative;
+  border-radius: 5px;
+  border: none;
+  height: 30px;
+  padding: 5px 20px;
+  margin-top: -10px;
+  background-color: #47ebb2;
+  color: rgba(10, 10, 10, 0.627);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nb-form-header {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: bolder;
+  font-style: oblique;
+}

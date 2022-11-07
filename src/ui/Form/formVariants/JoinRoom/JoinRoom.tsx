@@ -1,4 +1,5 @@
-import { FC, useCallback, useState } from "react";
+import { useCallback, useState } from "react";
+import '../form-common.css';
 import "./join-room.css";
 
 const joinExistingRoom = (username: string, roomCode: string) => {
@@ -25,26 +26,26 @@ const JoinRoom = ({
 
   return (
     <div className="join-room-modal">
-      <div>
-        <div className="create-room-modal-title">JOIN ROOM</div>
-        <div className="nb-create-room-exit">X</div>
+      <div className="nb-form-header">
+        <div className="nb-form-title">JOIN ROOM</div>
+        <div className="nb-form-exit" onClick={onExit}>X</div>
       </div>
 
-      <div className="input-group">
+      <div className="nb-form-input-group">
         <input 
-          className="input-box"
+          className="nb-form-input-box"
           type="text"
           placeholder="USERNAME"
           onChange={(event) => setUsername(event.target.value)}
         />
         <input 
-          className="input-box" 
+          className="nb-form-input-box" 
           type="text" 
           placeholder="ROOM CODE" 
           onChange={(event) => setRoomCode(event.target.value)}
         />
       </div>
-      <button className="create-room-modal-button" onClick={joinRoom}>
+      <button className="nb-form-success-button" onClick={joinRoom}>
         JOIN ROOM
       </button>
     </div>
