@@ -1,5 +1,4 @@
 import { FC, useCallback, useState } from "react";
-import { useRoomListQuery } from "../../../../services/serverBrowser";
 import "./join-room.css";
 
 const joinExistingRoom = (username: string, roomCode: string) => {
@@ -10,12 +9,15 @@ const joinExistingRoom = (username: string, roomCode: string) => {
   console.log(JSON.stringify(joinRoomConfig));
 }
 
-const JoinRoom: FC = () => {
+interface JoinRoomProps {
+  onExit: () => void,
+}
+
+const JoinRoom = ({
+  onExit,
+}: JoinRoomProps) => {
   const [username, setUsername] = useState<string>('');
   const [roomCode, setRoomCode] = useState<string>('');
-
-  const query = useRoomListQuery();
-  console.log('q here', query);
 
   const joinRoom = useCallback(() => {
     joinExistingRoom(username, roomCode);
@@ -23,7 +25,11 @@ const JoinRoom: FC = () => {
 
   return (
     <div className="join-room-modal">
-      <div className="create-room-modal-title">JOIN ROOM</div>
+      <div>
+        <div className="create-room-modal-title">JOIN ROOM</div>
+        <div className="nb-create-room-exit">X</div>
+      </div>
+
       <div className="input-group">
         <input 
           className="input-box"
@@ -45,4 +51,4 @@ const JoinRoom: FC = () => {
   )
 }
 
-export default JoinRoom;
+export default JoinRoom

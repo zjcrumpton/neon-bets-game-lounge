@@ -1,20 +1,11 @@
-.landing-page {
-  height: 100vh;
-  width: 100%;
+.nb-landing-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
-.nb-landing-page-card {
+  height: 100vh;
+  width: 100%;
 }
-
-.nb-landing-page-card-group {
-  position: absolute;
-  display: flex;
-  gap: 20px;
-}
-
 
 .nb-landing-page-main {
   display: flex;
@@ -23,34 +14,40 @@
   align-items: center;
 }
 
-.join-room-button {
-  background-color: #37C0FB;
-  margin-bottom: 20px;
-}
-
-.join-room-button:hover {
-  box-shadow: 0px 0px 10px #37C0FB;
-}
-
-.create-room-button {
-  background-color: #FB37AE;
-}
-
-.create-room-button:hover {
-  box-shadow: 0px 0px 10px #FB37AE;
-}
-
-.logo {
+.nb-landing-page-logo {
   margin-top: 20vh;
   margin-bottom: 80px;
 }
 
-.landing-page-signature {
+.nb-landing-page-btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 400px;
+}
+
+.nb-join-room-btn {
+  background-color: #37C0FB;
+}
+.nb-join-room-btn:hover {
+  box-shadow: 0px 0px 10px #37C0FB;
+}
+
+.nb-create-room-btn {
+  background-color: #FB37AE;
+}
+.nb-create-room-btn:hover {
+  box-shadow: 0px 0px 10px #FB37AE;
+}
+
+.nb-landing-page-form-container {
+  margin-top: -20px;
+}
+
+.nb-landing-page-footer {
   position: absolute;
   bottom: 10px;
   color: #4E4E4E;
 }
 
-.button-container {
-  height: 400px;
-}
+
