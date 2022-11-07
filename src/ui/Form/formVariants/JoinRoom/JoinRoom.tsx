@@ -1,14 +1,22 @@
 import { useCallback, useState } from "react";
+import { ROOM } from "../../../../constants/endpoints";
+import { socket } from "../../../../services";
+import { GameEvent } from "../../../../types";
 import '../form-common.css';
 import "./join-room.css";
 
 const joinExistingRoom = (username: string, roomCode: string) => {
-  const joinRoomConfig = {
-    username,
-    roomCode,
-  }
-  console.log(JSON.stringify(joinRoomConfig));
-}
+  socket.emit(GameEvent.JOIN_ROOM, {
+    playerName: username,
+    code: roomCode
+  });
+
+  const joinedRoomListener = (newRoomCode: string) => {
+    window.location.href = ROOM + `/${newRoomCode}`;
+    socket.removeListener(GameEvent.JOINED_ROOM, joinedRoomListener);
+  };
+  socket.on(GameEvent.JOINED_ROOM, joinedRoomListener);
+};
 
 interface JoinRoomProps {
   onExit: () => void,

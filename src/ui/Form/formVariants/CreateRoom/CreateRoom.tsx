@@ -1,14 +1,26 @@
 import { useCallback, useState } from 'react';
 import '../form-common.css';
+import { socket } from '../../../../services';
+import { GameEvent } from '../../../../types';
+import {  } from 'react-router-dom';
 import './create-room.css';
+import { ROOM } from '../../../../constants/endpoints';
 
 const createNewRoom = (username: string, roomName: string, customRoomCode?: string) => {
-  const roomConfig = {
-    username,
-    roomName,
-    customRoomCode,
-  };
-  console.log(JSON.stringify(roomConfig));
+  if (username) {
+    socket.emit(GameEvent.NEW_ROOM, {
+      playerName: username,
+      roomName,
+      roomCode: customRoomCode,
+    });
+
+    const joinNewRoom = (newRoomCode: string) => {
+      window.location.href = ROOM + `/${newRoomCode}`;
+      socket.removeListener(GameEvent.ROOM_CREATED, joinNewRoom);
+    }
+
+    socket.on(GameEvent.ROOM_CREATED, joinNewRoom);
+  }
 }
 
 interface CreateRoomProps {
