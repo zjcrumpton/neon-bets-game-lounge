@@ -1,16 +1,13 @@
 import { useCallback, useState } from 'react';
 import Button from '../../ui/Button/Button';
-import neonBets from './res/NeonBets.svg';
+import neonBets from '../../assets/NeonBets.svg';
 import { socket } from '../../services';
 import './landing-page.css';
 import { 
   CreateRoom,
   JoinRoom,
 } from '../../ui/Form';
-
-socket.on('connection', () => {
-  console.log('connected');
-});
+import { useReactQuerySubscription } from '../../services/querySubscription';
 
 const FOOTER_COPY = 'a game by Void Studios, 2022';
 const JOIN_ROOM_BUTTON_COPY = 'JOIN ROOM';
@@ -23,6 +20,7 @@ enum LandingState {
 }
 
 const LandingPage = () => {
+  
   const [landingState, setLandingState] = useState<LandingState>(LandingState.DEFAULT);
 
   const selectJoin = useCallback(() => {

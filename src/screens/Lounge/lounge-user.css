@@ -1,0 +1,17 @@
+.nb-lounge-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nb-lounge-user-bubble {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.nb-lounge-user-name {
+  font-size: 20px;
+  color: white;
+}
