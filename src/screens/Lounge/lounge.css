@@ -6,15 +6,7 @@
   align-items: center;
 }
 
-.nb-game-screen {
-  width: 40%;
-  height: 60%;
-  background-color: #3C3C3C;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 
 .nb-side-bar {
 

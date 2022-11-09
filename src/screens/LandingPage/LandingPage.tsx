@@ -7,7 +7,6 @@ import {
   CreateRoom,
   JoinRoom,
 } from '../../ui/Form';
-import { useReactQuerySubscription } from '../../services/querySubscription';
 
 const FOOTER_COPY = 'a game by Void Studios, 2022';
 const JOIN_ROOM_BUTTON_COPY = 'JOIN ROOM';

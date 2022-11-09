@@ -1,0 +1,18 @@
+
+.nb-game-screen-select-game {
+  background-color: #FB37AE;
+  width: 200px;
+}
+.nb-game-screen-select-game:hover {
+  box-shadow: 0px 0px 10px #FB37AE;
+}
+
+.nb-game-screen {
+  width: 1000px;
+  height: 600px;
+  background-color: #3C3C3C;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,85 @@
+.nb-poker-game {
+  position: relative;
+  background-color: #0a0a0a;
+  height: 100%;
+  width: 100%;
+  border-radius: 18px;
+
+}
+
+/* 900 x 600 */
+.nb-poker-table {
+  position: absolute;
+  box-sizing: border-box;
+  width: 600px;
+  height: 300px;
+  border-radius: 400px;
+  background-color: #281A33;
+  left: 200px;
+  top: 60px;
+  border: 6px solid #4D3859;
+  box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.5),
+  0 0 0 20px #806293;
+}
+
+
+
+
+/* 20px solid #806293*/
+.nb-user-hud {
+  position: absolute;
+  width: 500px;
+  height: 230px;
+  border: 2px solid white;
+  bottom: 0px;
+  left: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+.nb-user-hud-center {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid red;
+}
+
+.nb-user-hud-cards {
+  display: flex;
+  justify-content: center;
+  border: 2px solid blue;
+}
+
+.nb-player-card {
+  margin: -10px 2px 0 2px;
+  height: 130px;
+}
+
+
+.nb-user-hud-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+}
+
+.nb-user-hud-info-money {
+  font-size: 30px;
+  color: #46FF28;
+  text-shadow: 0px 0px 4px #7FDB70;
+}
+
+.nb-user-hud-info-name {
+  font-size: 24px;
+}
+
+.nb-player-card:nth-of-type(1) {
+}
+
+
+
+.nb-other-players {
+
+}
+

@@ -1,8 +1,10 @@
 import { useEffect, useMemo } from "react";
 import { useLocation } from "react-router-dom";
-import LoungeUser from "./LoungeUser";
+import LoungeUser from "./components/LoungeUser/LoungeUser";
 import { useRoomData } from "../../services/lounge";
 import './lounge.css';
+import Button from "../../ui/Button/Button";
+import GameScreen from "../GameScreen/GameScreen";
 
 
 const colors = ["red", "blue", "green", "yellow", "pink", "purple", "orange"];
@@ -33,9 +35,7 @@ const Lounge = () => {
       <div className="nb-side-bar">
 
       </div>
-      <div className="nb-game-screen">
-        <button>Select Game</button>
-      </div>
+      <GameScreen />
       <div className="nb-user-group">
         {renderPlayers}
       </div>

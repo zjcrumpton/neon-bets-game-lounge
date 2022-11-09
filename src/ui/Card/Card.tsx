@@ -14,8 +14,8 @@ const Card = ({value, suit, className, showBackOverride}: CardProps) => {
   
   return showBackOverride 
     ? <img src={CARD_IMAGE_PREFIX + "/card-back.svg"}/>
-    : <div className={`neon-bets-playing-card ${className}`}>
-        <img src={CARD_IMAGE_PREFIX + `/${suit}/` + CardValueStringMap[value] + "-" + suit + ".svg"}/>
+    : <div className={`neon-bets-playing-card`}>
+        <img className={className} src={CARD_IMAGE_PREFIX + `/${suit}/` + CardValueStringMap[value] + "-" + suit + ".svg"}/>
       </div>
 
 }

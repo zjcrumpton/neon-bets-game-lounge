@@ -1,0 +1,52 @@
+.nb-game-icon {
+  height: 70px;
+  width: 70px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.nb-game-selector {
+  width: 300px;
+  height: 200px;
+  background-color: #652149;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn .3s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.nb-game-selector-window {
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  row-gap: 10px;
+  overflow-y: scroll;
+  padding-top: 10px;
+}
+
+.nb-game-selector-bar {
+  background-color: #932b6a;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 14px 12px 14px;
+  border-radius: 16px 16px 0px 0px;
+  font-weight: bolder;
+  font-style: oblique;
+  color: white;
+}
+
+.nb-game-selector-bar-exit {
+  cursor: pointer;
+}
