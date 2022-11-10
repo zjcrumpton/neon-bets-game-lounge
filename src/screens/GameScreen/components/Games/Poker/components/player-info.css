@@ -1,0 +1,38 @@
+.nb-poker-player-card {
+  height: 80px;
+  width: 170px;
+  background-color: #190E17;
+  border-radius: 200px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.nb-poker-player-card-info {
+  display: block;
+  flex-direction: column;
+  gap: 8px;
+  width: 70px;
+  margin-left: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 22px;
+}
+
+.nb-poker-player-card-name {
+  display: inline;
+  color: white;
+  text-overflow: ellipsis;
+  width: 10px;
+}
+
+.nb-poker-player-card-money {
+  color: green;
+}
+
+.nb-poker-player-card-color {
+  margin-left: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
